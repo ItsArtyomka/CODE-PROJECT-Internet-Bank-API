@@ -35,9 +35,9 @@ So-called "Operations API" thus will have these functions:
 * getOperationList(ID, START_DATE, END_DATE)
 * transferMoney(ID, RECEIVER_ID, SUM)
 
+---
 
-
-Useful Links:
+Useful Research Links:
 * [Building RESTful APIs Tutorial](https://medium.com/javarevisited/building-restful-apis-in-java-a-step-by-step-tutorial-e1b9b2d3e6ab)
 * [Declaring Dependencies](https://docs.gradle.org/current/userguide/declaring_dependencies.html)
 * Working with PostgreSQL in Java:
