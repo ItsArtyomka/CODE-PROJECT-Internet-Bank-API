@@ -24,7 +24,7 @@ List of the operations that will be realized:
 - Find out the person's balance.
 - Withdraw of X amount from the account.
 - Balance top-up.
-- History of user's financial operations in a period of time.
+- History of bank's financial operations in a period of time.
 - Transfer X amount to another person.
   The Answer will be in the form of a JSON.
 
@@ -37,7 +37,7 @@ So-called "Operations API" thus will have these functions:
 
 
 
-Useful Links:
+Useful Research Links:
 * [Building RESTful APIs Tutorial](https://medium.com/javarevisited/building-restful-apis-in-java-a-step-by-step-tutorial-e1b9b2d3e6ab)
 * [Declaring Dependencies](https://docs.gradle.org/current/userguide/declaring_dependencies.html)
 * Working with PostgreSQL in Java:
