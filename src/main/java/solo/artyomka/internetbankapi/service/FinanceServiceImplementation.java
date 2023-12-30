@@ -1,6 +1,8 @@
 package solo.artyomka.internetbankapi.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import solo.artyomka.internetbankapi.entity.BankRepository;
 
 @Service
 public class FinanceServiceImplementation implements FinanceService {
