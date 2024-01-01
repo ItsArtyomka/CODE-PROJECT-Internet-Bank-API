@@ -1,20 +1,21 @@
-This is the **final project** that has a purpose of being kind of like a dissertation to complete my Java Developer Course.
+# Internet Banking API Java Project
+
+---
+
+#### This is the **final project** that has a purpose of being kind of like a dissertation to complete my Java Developer Course.
 This is a great project that will go into my cool portfolio _:)_
 
 What makes this project stand out is that it will help develop the proficiency in creating a REST API project.
 It utilizes RESTful operation in the form of methods that process data from a structured SQL database.
 Those methods will work with SQL database, then the collected data will be processed and outputted in the form of JSON.
 
-The project itself and the code is quite cool as well. The code is written in the Java 17.
-For the dependencies management I choose to use Gradle because I use Maven quite a lot and I want to learn how to use gradle again. I have also added a few dependencies that I think will be useful, which includes:
-* PostgreSQL Driver
-* Lombok
-* Spring Web
-* JUnit
-* Testcontainers
-
-Some of those dependencies have been used in the past in other projects or what not.
-However, the Testcontainers, Lombok, and JUnit are dependencies that I want to get better at.
+The project code is written in the Java 17. For the dependencies management and tool for building the project,
+I choose to use Gradle because I use Maven quite a lot and I want to learn how to use gradle again.
+I have also added a few dependencies that I think will be useful, which includes:
+* Lombok - To reduce boiler code.
+* Spring Web - Includes Spring MVC that helps to develop RESTful API.
+* JUnit - Framework to write and write tests.
+* Testcontainers - Lightweight API for bootstrapping integration tests with real services wrapped in Docker containers.
 
 ---
 
