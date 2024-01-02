@@ -17,7 +17,7 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping("/api/accounts")
+@RequestMapping(value = "/api/accounts", method = RequestMethod.GET)
 public class AccountController {
 
     @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
