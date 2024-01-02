@@ -38,3 +38,5 @@ List of the functionality that will be realized:
 
 ---
 
+#### Structure of the PostgreSQL Database
+![DB Structure](src/main/resources/png/db_structure.png)
