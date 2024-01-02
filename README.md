@@ -19,7 +19,7 @@ I have also added a few dependencies that I think will be useful, which includes
 
 ---
 
-#### **TASK**: Realize a REST API for an Internet Bank that is used to deal with financial operations, aka BaaS.
+### **TASK**: Realize a REST API for an Internet Bank that is used to deal with financial operations, aka BaaS.
 
 List of the functionality that will be realized:
 - Find out the person's balance.
@@ -30,13 +30,13 @@ List of the functionality that will be realized:
   The answers will be in the form of a JSON.
 
 "Internet Bank API" thus will have these functions:
-* getBalance(ID)
-* takeMoney(ID, AMOUNT)
-* putMoney(ID, AMOUNT)
-* getOperationList(ID, START_DATE, END_DATE)
-* transferMoney(ID, RECEIVER_ID, AMOUNT)
+* getBalance(_ID_)
+* takeMoney(_ID_, _AMOUNT_)
+* putMoney(_ID_, _AMOUNT_)
+* getOperationList(_ID_, _START_DATE_, _END_DATE_)
+* transferMoney(_ID_, _RECEIVER_ID_, _AMOUNT_)
 
 ---
 
-#### Structure of the PostgreSQL Database
+### Structure of the PostgreSQL Database
 ![DB Structure](src/main/resources/png/db_structure.png)
