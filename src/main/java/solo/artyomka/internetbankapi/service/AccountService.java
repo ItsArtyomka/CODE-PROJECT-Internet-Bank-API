@@ -5,8 +5,9 @@ import org.springframework.stereotype.Service;
 import solo.artyomka.internetbankapi.entity.Account;
 import solo.artyomka.internetbankapi.entity.Operation;
 import solo.artyomka.internetbankapi.repository.AccountRepository;
+import solo.artyomka.internetbankapi.repository.OperationRepository;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +20,10 @@ public class AccountService {
     @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
     @Autowired
     private AccountRepository accountRepository;
+
+    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
+    @Autowired
+    private OperationRepository operationRepository;
 
     // Adds new account to the database
     public Account createAccount(Account account) {
@@ -54,9 +59,22 @@ public class AccountService {
     }
 
     // Returns list of the account's operations within certain date period
-    public List<Operation> getOperationList(Long id, Date startDate, Date endDate) {
-        Account account = getAccount(id).orElseThrow(() -> new RuntimeException("Account Not Found"));
-        // I'M STUCK HERE!!!!
-        return null; // TO GET RID OF THE ERROR
+    public List<Operation> getOperationList(Long id, LocalDate startDate, LocalDate endDate) {
+//        if (startDate != null && endDate != null) {
+//            return operationRepository.getOperation(id).stream()
+//                    .filter(operation -> operation.getDate().after(startDate) && operation.getDate().before(endDate))
+//                    .toList();
+//        } else if (startDate != null) {
+//            return operationRepository.getOperation(id).stream()
+//                    .filter(operation -> operation.getDate().after(startDate))
+//                    .toList();
+//        } else if (endDate != null) {
+//            return operationRepository.getOperation(id).stream()
+//                    .filter(operation -> operation.getDate().before(endDate))
+//                    .toList();
+//        }
+//        return operationRepository.getOperation(id).stream().toList();
+
+        return null; // Temp
     }
 }
