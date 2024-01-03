@@ -4,8 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import solo.artyomka.internetbankapi.entity.Account;
+import solo.artyomka.internetbankapi.entity.Operation;
 import solo.artyomka.internetbankapi.service.AccountService;
 
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 /*
@@ -58,5 +61,11 @@ public class AccountController {
     public Account putMoney(@PathVariable Long id, @RequestBody Map<String, Double> request) {
         Double amount = request.get("amount");
         return accountService.putMoney(id, amount);
+    }
+
+    @Transactional
+    @PostMapping("${account_id}/getOperationList")
+    public List<Operation> getOperationList(@PathVariable Long account_id, LocalDate startDate, LocalDate endDate) {
+        return accountService.getOperationsList(account_id, startDate, endDate);
     }
 }

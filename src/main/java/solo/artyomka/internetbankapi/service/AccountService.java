@@ -14,12 +14,17 @@ import java.util.Optional;
 /*
  * This code contains the main financial logic methods.
  */
+@SuppressWarnings("CommentedOutCode")
 @Service
 public class AccountService {
 
     @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
     @Autowired
     private AccountRepository accountRepository;
+
+    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
+    @Autowired
+    private OperationRepository operationRepository;
 
 //    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
 //    @Autowired
@@ -59,22 +64,17 @@ public class AccountService {
     }
 
     // Returns list of the account's operations within certain date period
-    public List<Operation> getOperationList(Long id, LocalDate startDate, LocalDate endDate) {
-//        if (startDate != null && endDate != null) {
-//            return operationRepository.getOperation(id).stream()
-//                    .filter(operation -> operation.getDate().after(startDate) && operation.getDate().before(endDate))
-//                    .toList();
-//        } else if (startDate != null) {
-//            return operationRepository.getOperation(id).stream()
-//                    .filter(operation -> operation.getDate().after(startDate))
-//                    .toList();
-//        } else if (endDate != null) {
-//            return operationRepository.getOperation(id).stream()
-//                    .filter(operation -> operation.getDate().before(endDate))
-//                    .toList();
-//        }
-//        return operationRepository.getOperation(id).stream().toList();
-
-        return null; // Temp
+    public List<Operation> getOperationsList(Long id, LocalDate startDate, LocalDate endDate) {
+        // Maybe this is more simple than I thought...
+        if (startDate != null && endDate != null) {
+            return operationRepository.findOperationsByAccount_idAddedAtBetween(id, startDate, endDate);
+        } else if (startDate != null) {
+            return operationRepository.findOperationsByAccount_idAddedAfter(id, startDate);
+        } else if (endDate != null){
+            return operationRepository.findOperationsByAccount_idAddedBefore(id, endDate);
+        } else {
+            return operationRepository.findOperationByAccount_id(id).stream().toList();
+        }
     }
+
 }
