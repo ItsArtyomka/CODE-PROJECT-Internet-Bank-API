@@ -21,9 +21,9 @@ public class AccountService {
     @Autowired
     private AccountRepository accountRepository;
 
-    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
-    @Autowired
-    private OperationRepository operationRepository;
+//    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
+//    @Autowired
+//    private OperationRepository operationRepository;
 
     // Adds new account to the database
     public Account createAccount(Account account) {

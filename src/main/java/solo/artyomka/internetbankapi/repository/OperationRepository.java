@@ -9,7 +9,6 @@ import java.util.List;
 
 public interface OperationRepository extends Repository<Operation, Long> {
 
-
     // List<Operation> findOperationsByAddedAtBetween(LocalDate addedAtStart, LocalDate addedAtEnd);
 
     Collection<Object> getOperation(Long id);
