@@ -64,8 +64,8 @@ public class AccountController {
     }
 
     @Transactional
-    @PostMapping("${account_id}/getOperationList")
-    public List<Operation> getOperationList(@PathVariable Long account_id, LocalDate startDate, LocalDate endDate) {
-        return accountService.getOperationsList(account_id, startDate, endDate);
+    @PostMapping("${id}/getOperationList")
+    public List<Operation> getOperationList(@PathVariable Long id, LocalDate startDate, LocalDate endDate) {
+        return accountService.getOperationsList(id, startDate, endDate);
     }
 }
