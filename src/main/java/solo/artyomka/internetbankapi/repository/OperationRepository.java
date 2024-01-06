@@ -1,20 +1,17 @@
 package solo.artyomka.internetbankapi.repository;
 
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import solo.artyomka.internetbankapi.entity.Operation;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @SuppressWarnings("SpringDataMethodInconsistencyInspection")
-public interface OperationRepository extends Repository<Operation, Long> {
+public interface OperationRepository extends JpaRepository<Operation, Long> {
 
-    List<Operation> findOperationByAccount_id(Long id);
+    @SuppressWarnings("NullableProblems")
+    Optional<Operation> findById(Long id);
 
-    List<Operation> findOperationsByAccount_idAddedAtBetween(Long id, LocalDate addedAtStart, LocalDate addedAtEnd);
-
-    List<Operation> findOperationsByAccount_idAddedAfter(Long id, LocalDate addedAtStart);
-
-    List<Operation> findOperationsByAccount_idAddedBefore(Long id, LocalDate addedAtEnd);
-
+    List<Operation> findByIdAddedAtBetween(Long id, LocalDate addedAtStart, LocalDate addedAtEnd);
 }

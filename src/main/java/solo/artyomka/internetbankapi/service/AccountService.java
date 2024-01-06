@@ -65,16 +65,18 @@ public class AccountService {
 
     // Returns list of the account's operations within certain date period
     public List<Operation> getOperationsList(Long id, LocalDate startDate, LocalDate endDate) {
-        // Maybe this is more simple than I thought...
-        if (startDate != null && endDate != null) {
-            return operationRepository.findOperationsByAccount_idAddedAtBetween(id, startDate, endDate);
-        } else if (startDate != null) {
-            return operationRepository.findOperationsByAccount_idAddedAfter(id, startDate);
-        } else if (endDate != null){
-            return operationRepository.findOperationsByAccount_idAddedBefore(id, endDate);
-        } else {
-            return operationRepository.findOperationByAccount_id(id).stream().toList();
-        }
+//        // Maybe this is more simple than I thought...
+//        if (startDate != null && endDate != null) {
+//            return operationRepository.findByIdAddedAtBetween(id, startDate, endDate);
+//        } else if (startDate != null) {
+//            return operationRepository.findByIdAddedAfter(id, startDate);
+//        } else if (endDate != null){
+//            return operationRepository.findByIdAddedBefore(id, endDate);
+//        } else {
+//            return operationRepository.findById(id).stream().toList();
+//        }
+        Account account = getAccount(id).orElseThrow(() -> new RuntimeException("Account Not Found"));
+        return operationRepository.findByIdAddedAtBetween(account.getId(), startDate, endDate);
     }
 
 }
