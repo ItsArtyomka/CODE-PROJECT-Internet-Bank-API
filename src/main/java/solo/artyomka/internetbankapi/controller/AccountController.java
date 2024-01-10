@@ -11,17 +11,24 @@ import java.util.List;
 import java.util.Map;
 
 /*
+ * This class handles incoming HTTP requests and manages the flow of data between client and the app.
  * Exposes the financial logic as RESTful API endpoint for methods:
  * - getAccount()
  * - getBalance()
  * - takeMoney()
  * - putMoney()
+ * - getOperationList()
  */
 
 @RestController
 @RequestMapping(value = "/api/accounts", method = RequestMethod.GET)
 public class AccountController {
-    private AccountService accountService;
+
+    private final AccountService accountService;
+
+    public AccountController(AccountService accountService) {
+        this.accountService = accountService;
+    }
 
     @Transactional
     @PostMapping
@@ -30,7 +37,7 @@ public class AccountController {
     }
 
     @Transactional
-    @GetMapping("/{id}")
+    @GetMapping("/getAccount/{id}")
     public Account getAccount(@PathVariable Long id) {
         return accountService.getAccount(id).orElseThrow(() -> new RuntimeException("Account Not Found"));
     }

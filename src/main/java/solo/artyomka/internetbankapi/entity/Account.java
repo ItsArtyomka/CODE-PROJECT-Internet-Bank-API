@@ -5,15 +5,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 /*
- * JPA Account entity.
+ * JPA Account entity that represents the 'accounts' tables.
  */
+
 @Getter
 @Setter
 @Entity
-@Table(name = "account", schema = "public")
+@Table(name = "accounts", schema = "public")
 public class Account {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "account_holder_name")

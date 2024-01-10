@@ -6,13 +6,17 @@ import lombok.Setter;
 
 import java.util.Date;
 
+/*
+ * JPA Account entity that represents the 'operations' tables.
+ */
+
 @Getter
 @Setter
 @Entity
 @Table(name = "operations", schema = "public")
 public class Operation {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne

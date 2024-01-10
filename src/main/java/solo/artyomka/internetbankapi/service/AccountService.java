@@ -10,13 +10,20 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+
+
 /*
- * This code contains the main financial logic methods.
+ * This class contains the business logic, acting as an intermediary between the controllers and the repositories.
  */
 @Service
 public class AccountService {
-    private AccountRepository accountRepository;
-    private OperationRepository operationRepository;
+    private final AccountRepository accountRepository;
+    private final OperationRepository operationRepository;
+
+    public AccountService(AccountRepository accountRepository, OperationRepository operationRepository) {
+        this.accountRepository = accountRepository;
+        this.operationRepository = operationRepository;
+    }
 
     // Adds new account to the database
     public Account createAccount(Account account) {
