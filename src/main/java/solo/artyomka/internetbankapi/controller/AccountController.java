@@ -1,13 +1,12 @@
 package solo.artyomka.internetbankapi.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import solo.artyomka.internetbankapi.entity.Account;
 import solo.artyomka.internetbankapi.entity.Operation;
 import solo.artyomka.internetbankapi.service.AccountService;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -22,9 +21,6 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/api/accounts", method = RequestMethod.GET)
 public class AccountController {
-
-    @SuppressWarnings("SpringJavaAutowiredFieldsWarningInspection")
-    @Autowired
     private AccountService accountService;
 
     @Transactional
@@ -64,8 +60,8 @@ public class AccountController {
     }
 
     @Transactional
-    @PostMapping("${id}/getOperationList")
-    public List<Operation> getOperationList(@PathVariable Long id, LocalDate startDate, LocalDate endDate) {
-        return accountService.getOperationsList(id, startDate, endDate);
+    @PostMapping("/{id}/getOperationList")
+    public List<Operation> getOperationList(@PathVariable Long id, @RequestParam Date startDate, @RequestParam Date endDate) {
+        return accountService.getOperationList(id, startDate, endDate);
     }
 }

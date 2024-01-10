@@ -23,11 +23,9 @@ repositories {
 
 dependencies {
     // Spring Framework
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -38,10 +36,6 @@ dependencies {
 
     // Testcontainers
     testImplementation 'org.testcontainers:junit-jupiter'
-    testImplementation 'org.testcontainers:postgresql'
-
-    // JPA
-    implementation 'jakarta.persistence:jakarta.persistence-api'
 }
 
 tasks.named('test') {
